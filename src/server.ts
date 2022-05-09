@@ -1,12 +1,12 @@
-import express from 'express'
+import express from "express";
+import { router } from "./routes";
+import cors from "cors";
 
-const app = express()
+const app = express();
 
-const porta = 3333
+app.use(cors());
+app.use(express.json());
+app.use(router);
 
-app.get('/user', (req, res) => {
-    return res.json('funcionando').status(200)
-
-})
-
-app.listen(porta, () => console.log(`http://localhost:${porta}`))
+const porta = 3333;
+app.listen(porta, () => console.log(`http://localhost:${porta}`));
