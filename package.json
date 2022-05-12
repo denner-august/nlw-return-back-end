@@ -4,7 +4,7 @@
   "description": "back-end da aplição nlw-return",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "dev": "ts-node-dev src/server.ts"
   },
   "repository": {
