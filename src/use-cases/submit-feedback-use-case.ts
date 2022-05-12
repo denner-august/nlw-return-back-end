@@ -33,8 +33,11 @@ export class submitFeedbackUseCase {
     await this.MailDataProsp.sendMail({
       subject: "novo feedback",
       body: [
+        `<div style="font-family:sans-serif; font-size:16px; color:#111;">`,
         `<p>tipo do feedback ${type}</p>`,
-        `<h1>comentario do feedback ${comment}</h1>`,
+        `<p>comentario do feedback ${comment}</p>`,
+        screenshot ? `<img src="${screenshot}"/>` : ``,
+        `</div>`,
       ].join("\n"),
     });
   }
