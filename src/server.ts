@@ -8,5 +8,5 @@ app.use(cors());
 app.use(express.json());
 app.use(router);
 
-const porta = 3333;
+const porta = process.env.PORT || 3333;
 app.listen(porta, () => console.log(`http://localhost:${porta}`));
